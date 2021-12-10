@@ -6,7 +6,7 @@
 /*   By: ahel-mou <ahel-mou@student-1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 14:58:10 by ahel-mou          #+#    #+#             */
-/*   Updated: 2021/12/07 08:18:41 by ahel-mou         ###   ########.fr       */
+/*   Updated: 2021/12/09 05:44:43 by ahel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <signal.h>
-//# include <stdio.h>
-//# include <string.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <sys/types.h>
 
 //-------------------- printf
 
@@ -33,6 +34,16 @@ int			ft_printf(const char *cara, ...);
 
 //-------------------- minitalk
 
+typedef struct dipo_dial_lvariablat
+{
+	int			pid;
+	char		*str;
+	char		*rt_bin;
+	char		*sms;
+	size_t		i;
+	size_t		sig_len;
+	
+}				t_storage_unit;
 
-
+char		*rj3olia_binary_lay7fdk(int ascii);
 #endif
