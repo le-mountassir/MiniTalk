@@ -6,36 +6,28 @@
 /*   By: ahel-mou <ahel-mou@student-1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 07:55:26 by ahel-mou          #+#    #+#             */
-/*   Updated: 2021/12/08 00:45:58 by ahel-mou         ###   ########.fr       */
+/*   Updated: 2021/12/09 07:20:10 by ahel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "program.h"
- 
 
-void handler_zero(int num)
+void sig_type(int num)
 {
-	num = 0;
-	signals_handler(0);
-}
-
-void handler_one(int num)
-{
-	num = 0;
-	signals_handler(1);
-}
-
-char *signals_handler(int bit)
-{
-	static char	binary[8];
-	*binary = bit;
-	
+	if (num == SIGUSR1)
+	{
+		printf("0\n");
+	}
+	else if (num == SIGUSR2)
+	{
+		printf("1\n");
+	}
 }
 
 int main()
 {
-	ft_printf(getpid());
-	signal(SIGUSR1, handler_zero); // 0
-	signal(SIGUSR2, handler_one); // 1
-	while(1);
+	ft_printf("---%d---\n", getpid());
+	signal(SIGUSR1, sig_type);
+	signal(SIGUSR2, sig_type);
+	while (1);
 }
