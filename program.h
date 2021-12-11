@@ -6,7 +6,7 @@
 /*   By: ahel-mou <ahel-mou@student-1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 14:58:10 by ahel-mou          #+#    #+#             */
-/*   Updated: 2021/12/09 05:44:43 by ahel-mou         ###   ########.fr       */
+/*   Updated: 2021/12/10 04:16:50 by ahel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <sys/types.h>
-
+#include <math.h>
 //-------------------- printf
 
 int			var_type(char cara, va_list l_o_arg);
@@ -45,5 +45,7 @@ typedef struct dipo_dial_lvariablat
 	
 }				t_storage_unit;
 
-char		*rj3olia_binary_lay7fdk(int ascii);
+char		*rj3olia_binary_lay7fdk(char ascii);
+int			rj3olia_ascii(char *str);
+char		*ft_itoa_base(long i, char *c);
 #endif
