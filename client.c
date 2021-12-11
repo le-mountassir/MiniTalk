@@ -6,7 +6,7 @@
 /*   By: ahel-mou <ahel-mou@student-1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 07:55:23 by ahel-mou          #+#    #+#             */
-/*   Updated: 2021/12/09 07:15:25 by ahel-mou         ###   ########.fr       */
+/*   Updated: 2021/12/10 05:20:00 by ahel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,19 @@ void	send_it(char *sms, int pid)
 	int i;
 	
 	i = 0;
-	printf("\nim send :%s\n", sms);
+	printf("\nim sending : ");
 	while (sms[i])
 	{
+		printf("%c", sms[i]);
 		if (sms[i] == '0')
 		{
+			usleep(1000);
 			kill(pid, SIGUSR1);
-			printf("0");
 		}
 		else if(sms[i] == '1')
 		{
+			usleep(1000);
 			kill(pid, SIGUSR2);
-			printf("1");
 		}
 		i++;
 	}
@@ -73,6 +74,6 @@ int main(int c, char **v)
 		unit_1.sms[unit_1.i] = '\0';
 		send_it(unit_1.sms, unit_1.pid);
 		// printf("%d",unit_1.pid);
-		printf("\n%s\n", unit_1.sms);
+		// printf("\n%s\n", unit_1.sms);
 	}
 }
