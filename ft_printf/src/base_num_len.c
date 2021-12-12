@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../program.h"
+#include "../../minitalk.h"
 
 int	base_num_len(size_t num, size_t base)
 {

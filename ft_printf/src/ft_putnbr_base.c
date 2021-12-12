@@ -6,11 +6,11 @@
 /*   By: ahel-mou <ahel-mou@student-1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 15:10:00 by ahel-mou          #+#    #+#             */
-/*   Updated: 2021/12/10 04:16:56 by ahel-mou         ###   ########.fr       */
+/*   Updated: 2021/12/11 13:55:17 by ahel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../program.h"
+#include "../../minitalk.h"
 
 int	ft_putnbr_base(int n, char *base)
 {

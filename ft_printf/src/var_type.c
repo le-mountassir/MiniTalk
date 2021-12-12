@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../program.h"
+#include "../../minitalk.h"
 
 int	var_type(char param, va_list lst)
 {

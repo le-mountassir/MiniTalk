@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../program.h"
+#include "../../minitalk.h"
 
 int	ft_putnbr_base_unsigned(unsigned int num, char *base)
 {

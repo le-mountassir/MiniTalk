@@ -6,11 +6,11 @@
 /*   By: ahel-mou <ahel-mou@student-1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 15:10:04 by ahel-mou          #+#    #+#             */
-/*   Updated: 2021/12/07 08:01:55 by ahel-mou         ###   ########.fr       */
+/*   Updated: 2021/12/11 13:55:10 by ahel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../program.h"
+#include "../../minitalk.h"
 
 int	ft_putchar(char cara)
 {
