@@ -6,7 +6,7 @@
 #    By: ahel-mou <ahel-mou@student-1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 14:32:16 by ahel-mou          #+#    #+#              #
-#    Updated: 2021/12/10 05:13:36 by ahel-mou         ###   ########.fr        #
+#    Updated: 2021/12/12 10:28:20 by ahel-mou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,10 @@ SRCS =	ft_printf/src/ft_printf.c\
 		ft_printf/src/ft_putnbr_base.c\
 		ft_printf/src/ft_pt_address.c\
 		ft_printf/src/base_num_len.c\
-		utils.c
+		utils/ft_atoi_base.c\
+		utils/to_binary.c\
+		utils/to_ascii.c\
+		utils/pid_len.c
 		
 	
 CC = gcc
@@ -53,7 +56,6 @@ server: fclean
 
 client:
 	@gcc client.c $(SRCS) -o client
-	
-cs:	server client
+
 
 .PHONY: clean, fclean, all, re, server, client
