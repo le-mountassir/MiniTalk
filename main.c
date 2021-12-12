@@ -1,24 +1,21 @@
-#include "program.h"
+#include <string.h>
 #include <stdio.h>
-void bss(int ascii)
+#include "minitalk.h"
+
+void ptr_f(int sig, siginfo_t *info, void *p)
 {
-	char base[] = "01";
-	char bin[8];
-	int i = 0;
-    char c;
-
-	if (ascii < 2)
-		printf("%c", base[0 + ascii]);
-	else
-	{
-        
-		bss(ascii / 2);
-		printf("%c",base[ascii % 2]);
-	}
-	i++;
+    int pid = info->si_pid;
+    printf("hi%d\n", pid);
 }
-
 int main()
 {
-    bss('a');
+    printf("----%d----\n", getpid());
+    struct sigaction sigs;
+    sigs.sa_sigaction = ptr_f;
+    sigs.sa_flags = SA_SIGINFO;
+    sigaction(SIGUSR1, &sigs, NULL);
+    while (1)
+    {
+        sleep(1);
+    }
 }
