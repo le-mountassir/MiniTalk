@@ -6,7 +6,7 @@
 /*   By: ahel-mou <ahel-mou@student-1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 14:58:10 by ahel-mou          #+#    #+#             */
-/*   Updated: 2021/12/12 10:29:00 by ahel-mou         ###   ########.fr       */
+/*   Updated: 2021/12/12 18:05:00 by ahel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <signal.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <sys/types.h>
 
 //-------------------- printf
 
@@ -47,6 +46,5 @@ typedef struct dipo_dial_lvariablat
 char		*to_binary(char ascii);
 int			to_ascii(char *str);
 int			ft_atoi(char *str);
-int			pid_len(int pid);
 
 #endif
