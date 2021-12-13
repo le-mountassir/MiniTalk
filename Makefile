@@ -6,7 +6,7 @@
 #    By: ahel-mou <ahel-mou@student-1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 14:32:16 by ahel-mou          #+#    #+#              #
-#    Updated: 2021/12/12 10:28:20 by ahel-mou         ###   ########.fr        #
+#    Updated: 2021/12/12 23:06:46 by ahel-mou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,9 @@ SRCS =	ft_printf/src/ft_printf.c\
 		ft_printf/src/ft_putnbr_base.c\
 		ft_printf/src/ft_pt_address.c\
 		ft_printf/src/base_num_len.c\
-		utils/ft_atoi_base.c\
+		utils/ft_atoi.c\
 		utils/to_binary.c\
-		utils/to_ascii.c\
-		utils/pid_len.c
+		utils/to_ascii.c
 		
 	
 CC = gcc
@@ -35,7 +34,7 @@ FLAGS = -Wall -Werror -Wextra
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+all: $(NAME) client server
 
 $(NAME) : $(OBJS)
 	@$(CC) -c $(CFLAGS) $(SRCS)
@@ -49,13 +48,12 @@ fclean: clean
 
 re: fclean all
 
-server: fclean
+server:
 	@gcc server.c $(SRCS) -o server
 	@clear
 	@./server
 
 client:
 	@gcc client.c $(SRCS) -o client
-
 
 .PHONY: clean, fclean, all, re, server, client
