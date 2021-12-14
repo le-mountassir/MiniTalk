@@ -6,7 +6,7 @@
 #    By: ahel-mou <ahel-mou@student-1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 14:32:16 by ahel-mou          #+#    #+#              #
-#    Updated: 2021/12/12 23:06:46 by ahel-mou         ###   ########.fr        #
+#    Updated: 2021/12/13 17:07:40 by ahel-mou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,11 +49,12 @@ fclean: clean
 re: fclean all
 
 server:
-	@gcc server.c $(SRCS) -o server
+	gcc server.c $(SRCS) -o server
 	@clear
 	@./server
 
 client:
-	@gcc client.c $(SRCS) -o client
+	gcc client.c $(SRCS) -o client
+	@clear
 
 .PHONY: clean, fclean, all, re, server, client
