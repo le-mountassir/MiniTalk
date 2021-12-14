@@ -6,7 +6,7 @@
 /*   By: ahel-mou <ahel-mou@student-1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 07:55:23 by ahel-mou          #+#    #+#             */
-/*   Updated: 2021/12/13 01:34:24 by ahel-mou         ###   ########.fr       */
+/*   Updated: 2021/12/13 21:42:21 by ahel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,23 @@ void	send_it(char *sms, int pid)
 void	confirm(int sig)
 {
 	sig = 0;
-	ft_printf("im done i sent everything\n");
+	ft_printf("im done, i've sent everything\n");
 }
 
 void	sms_to_bin(t_storage_unit *unit_2)
 {
-	int	i;
-	int	len;
-	int	f;
+	int		i;
+	int		len;
+	int		f;
+	char	*tmp;
 
-	len = ft_strlen(unit_2->str);
 	i = 0;
 	f = 0;
+	len = ft_strlen(unit_2->str);
 	while (f < len + 1)
 	{
 		unit_2->rt_bin = to_binary(unit_2->str[f]);
-		unit_2->rt_bin[9] = '\0';
+		tmp = unit_2->rt_bin;
 		while (*unit_2->rt_bin)
 		{
 			unit_2->sms[i] = *unit_2->rt_bin;
@@ -55,6 +56,7 @@ void	sms_to_bin(t_storage_unit *unit_2)
 			unit_2->rt_bin++;
 		}
 		f++;
+		free(tmp);
 	}
 	unit_2->sms[i] = '\0';
 }
@@ -74,14 +76,10 @@ int	main(int c, char **v)
 			return (0);
 		}
 		unit_1.str = v[2];
-		unit_1.sms = malloc(ft_strlen(unit_1.str) * 8);
+		unit_1.sms = malloc(ft_strlen(unit_1.str) * 10);
 		if (!unit_1.sms)
-			return (0);
-		unit_1.rt_bin = malloc(9);
-		if (!unit_1.rt_bin)
 			return (0);
 		sms_to_bin(&unit_1);
 		send_it(unit_1.sms, unit_1.pid);
-		free(unit_1.rt_bin);
 	}
 }
